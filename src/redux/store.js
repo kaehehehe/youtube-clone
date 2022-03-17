@@ -1,7 +1,7 @@
 import { configureStore } from '@reduxjs/toolkit';
 
 import mostPopularVideosReducer from './mostPopularVideosSlice';
-import searchVideosReducer from './searchVideos';
+import searchVideosReducer from './searchVideosSlice';
 
 export default configureStore({
   reducer: {

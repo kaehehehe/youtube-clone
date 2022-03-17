@@ -13,7 +13,7 @@ import { useDispatch } from 'react-redux';
 import logo from '../../images/logo.png';
 import userIcon from '../../images/userIcon.jpg';
 import * as S from './style';
-import { fetchSearchData } from '../../redux/searchVideos';
+import { fetchSearchData } from '../../redux/searchVideosSlice';
 
 const Header = () => {
   const navigate = useNavigate();
