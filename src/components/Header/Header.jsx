@@ -8,25 +8,33 @@ import {
   MdNotifications,
 } from 'react-icons/md';
 import { useNavigate } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
 
 import logo from '../../images/logo.png';
 import userIcon from '../../images/userIcon.jpg';
 import * as S from './style';
+import { fetchSearchData } from '../../redux/searchVideos';
 
 const Header = () => {
   const navigate = useNavigate();
   const inputRef = useRef(null);
+  const dispatch = useDispatch();
+  const { videos, loading } = useSelector((state) => state.searchVideos);
 
   const handleInput = (e) => {
     const value = inputRef.current.value;
     if (e.key === 'Enter') {
       if (value === '') return;
+      dispatch(fetchSearchData(value));
+      navigate('/search');
     }
   };
 
   const handleClickBtn = () => {
     const value = inputRef.current.value;
     if (value === '') return;
+          dispatch(fetchSearchData(value));
+          navigate('/search');
   };
 
   return (
@@ -36,8 +44,8 @@ const Header = () => {
           <MdMenu />
         </S.HamburgerMenu>
         <S.Title>
-        <img src={logo} alt="youtube logo" onClick={() => navigate('/')} />
-        <h1 onClick={() => navigate('/')}>YouTube</h1>
+          <img src={logo} alt="youtube logo" onClick={() => navigate('/')} />
+          <h1 onClick={() => navigate('/')}>YouTube</h1>
         </S.Title>
       </S.LeftSide>
       <S.SearchBar>
