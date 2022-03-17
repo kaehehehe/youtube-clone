@@ -24,8 +24,7 @@ export const VideoTitle = styled.h2`
 `;
 
 export const Wrapper = styled.div`
-  max-width: 1500px;
-  padding: 0 20px;
+  width: 90%;
 `;
 
 export const Actions = styled.div`
@@ -58,7 +57,6 @@ export const Buttons = styled.ul`
 `;
 
 export const Button = styled.li`
-  background-color: yallow;
   display: flex;
   justify-content: center;
   align-items: center;
