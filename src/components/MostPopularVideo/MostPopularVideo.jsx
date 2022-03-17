@@ -20,8 +20,10 @@ const MostPopularVideo = ({ video }) => {
 
   useEffect(() => {
     const thumbnailHeight = heightRef.current && heightRef.current.height;
+    console.log(thumbnailHeight);
     setThumbnailHeight(thumbnailHeight);
-  }, [[width, height]]);
+  }, [width, height]);
+
 
   const fetchChannelData = async (channelId) => {
     return await axios.get(
@@ -56,10 +58,7 @@ const MostPopularVideo = ({ video }) => {
             </S.Duration>
           </S.ThumbnailWrapper>
           <S.Wrapper>
-            <S.ChannelThumbnail
-              src={channel}
-              alt="channel thumbnail"
-            />
+            <S.ChannelThumbnail src={channel} alt="channel thumbnail" />
             <S.VideoMetadata>
               <p className="title">{video.snippet.title}</p>
               <p className="channel-name">{video.snippet.channelTitle}</p>

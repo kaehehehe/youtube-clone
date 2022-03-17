@@ -19,6 +19,7 @@ export const Thumbnail = styled.img`
 `;
 
 export const Duration = styled.div`
+display: ${({height}) => !height ? 'none' : 'block'};
   font-size: 12px;
   color: var(--white-color);
   background-color: rgba(0, 0, 0, 0.75);
