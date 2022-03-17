@@ -10,23 +10,37 @@ import {
 import { VscDebugStackframeDot } from 'react-icons/vsc';
 import { useParams } from 'react-router-dom';
 import { useSelector } from 'react-redux';
+import axios from 'axios';
 
 import { convertDataIntoMonthDayYear } from '../../utils/convertDataIntoMonthDayYear';
 import { convertDataIntoNumberUsingUnits } from '../../utils/convertDataIntoNumberUsingUnits';
 import * as S from './style';
 
+const KEY = process.env.REACT_APP_YOUTUBE_API_KEY;
+
 const Video = () => {
   const { videos } = useSelector((state) => state.mostPopularVideos);
   const [video, setVideo] = useState(null);
+  const [channel, setChannel] = useState();
   const { id } = useParams();
+
+  const fetchChannelData = async (channelId) => {
+    return await axios.get(
+      `https://youtube.googleapis.com/youtube/v3/channels?part=snippet%2CcontentDetails%2Cstatistics&id=${channelId}&key=${KEY}`,
+      { method: 'GET', redirect: 'follow' }
+    );
+  };
 
   useEffect(() => {
     const video = videos.filter((video) => video.id === id);
     setVideo(video[0]);
+    fetchChannelData(video[0].snippet.channelId).then((res) =>
+      setChannel(res.data.items[0])
+    );
   }, []);
   return (
     <>
-      {video && (
+      {video && channel && (
         <S.Container>
           <S.Video
             type="text/html"
@@ -80,14 +94,17 @@ const Video = () => {
             <S.VideoInfo>
               <S.VideoInfoWrapper>
                 <S.ChannelIconWrapper>
-                  {/* <S.ChannelIcon src={channel} alt="channel thumbnail" /> */}
+                  <S.ChannelIcon
+                    src={channel.snippet.thumbnails.default.url}
+                    alt="channel thumbnail"
+                  />
                   <S.ChannelTitleWrapper>
                     <S.ChannelTitle>
                       {video.snippet.channelTitle}
                     </S.ChannelTitle>
-                    {/* <S.Subscribers>{`${convertDataIntoNumberUsingUnits(
-                subscriberCount
-              )} subscribers`}</S.Subscribers> */}
+                    <S.Subscribers>{`${convertDataIntoNumberUsingUnits(
+                      channel.statistics.subscriberCount
+                    )} subscribers`}</S.Subscribers>
                   </S.ChannelTitleWrapper>
                 </S.ChannelIconWrapper>
                 <S.SubBtn>subscribe</S.SubBtn>
