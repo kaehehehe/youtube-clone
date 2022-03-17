@@ -2,7 +2,6 @@ import React, { useEffect, useRef, useState } from 'react';
 import { useWindowSize } from 'react-use';
 import { VscDebugStackframeDot } from 'react-icons/vsc';
 import { useNavigate } from 'react-router-dom';
-import { useDispatch } from 'react-redux';
 import axios from 'axios';
 
 import * as S from './style';

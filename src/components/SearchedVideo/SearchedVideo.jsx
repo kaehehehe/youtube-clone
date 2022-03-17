@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 
 import * as S from './style';
@@ -7,6 +8,7 @@ import { convertDataIntoAgo } from '../../utils/convertDataIntoAgo';
 const KEY = process.env.REACT_APP_YOUTUBE_API_KEY;
 
 const SearchedVideo = ({ video }) => {
+  const navigate = useNavigate();
   const [channel, setChannel] = useState();
 
   const fetchChannelData = async (channelId) => {
@@ -21,10 +23,16 @@ const SearchedVideo = ({ video }) => {
       setChannel(res.data.items[0])
     );
   }, []);
+
+  const handleClickVideo = () => {
+    const { videoId } = video.id;
+    navigate(`/search/video/${videoId}`);
+  };
+
   return (
     <>
       {channel && (
-        <S.Video>
+        <S.Video onClick={handleClickVideo}>
           <S.Thumbnail>
             <img
               src={video.snippet.thumbnails.medium.url}
