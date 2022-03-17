@@ -7,6 +7,7 @@ export const Container = styled.ul`
   margin-left: 10px;
   margin-right: 30px;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   padding-bottom: 30px;
