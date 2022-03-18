@@ -18,33 +18,32 @@ export const Header = styled.header`
 export const LeftSide = styled.div`
   display: flex;
   justify-content: center;
-  justify-content: center;
   align-items: center;
-  text-decoration: none;
 `;
 
 export const HamburgerMenu = styled.div`
   color: var(--white-color);
   font-size: 24px;
-  padding: 0 25px;
+  height: 24px;
+  margin: 0 20px;
   cursor: pointer;
 `;
 
 export const Title = styled.div`
   display: flex;
   justify-content: center;
-  justify-content: center;
+  align-items: center;
+  color: var(--white-color);
   cursor: pointer;
 
   img {
     width: auto;
-    height: 25px;
+    height: 20px;
     margin-right: 5px;
   }
 
   h1 {
     font-size: 23px;
-    color: var(--white-color);
   }
 `;
 

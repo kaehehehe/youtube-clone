@@ -15,7 +15,7 @@ import userIcon from '../../images/userIcon.jpg';
 import * as S from './style';
 import { fetchSearchData } from '../../redux/searchVideosSlice';
 
-const Header = () => {
+const Header = ({ setShow }) => {
   const navigate = useNavigate();
   const inputRef = useRef(null);
   const dispatch = useDispatch();
@@ -42,7 +42,7 @@ const Header = () => {
   return (
     <S.Header>
       <S.LeftSide>
-        <S.HamburgerMenu>
+        <S.HamburgerMenu onClick={() => setShow(true)}>
           <MdMenu />
         </S.HamburgerMenu>
         <S.Title onClick={() => navigate('/')}>

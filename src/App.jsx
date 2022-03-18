@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './App.css';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
@@ -7,12 +7,20 @@ import Home from './pages/Home';
 import Video from './pages/Video';
 import S_Video from './pages/S_Video';
 import Search from './pages/Search';
+import SideNavbar from './components/SideNavbar';
+import { SideNavbarPortals } from './components/SideNavbar/SideNavbarPortals';
 
 const App = () => {
+  const [showNavbar, setShowSideNavbar] = useState(false);
   return (
     <>
       <Router basename={process.env.PUBLIC_URL}>
-        <Header />
+        <Header setShow={setShowSideNavbar} />
+        {showNavbar && (
+          <SideNavbarPortals>
+            <SideNavbar setShow={setShowSideNavbar} />
+          </SideNavbarPortals>
+        )}
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/search" element={<Search />} />
