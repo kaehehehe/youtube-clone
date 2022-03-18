@@ -8,10 +8,9 @@ import { fetchVideoData } from '../../redux/mostPopularVideosSlice';
 const Home = () => {
   const dispatch = useDispatch();
   const { videos, loading } = useSelector((state) => state.mostPopularVideos);
-
   useEffect(() => {
     dispatch(fetchVideoData());
-  }, []);
+  }, [dispatch]);
 
   return (
     <S.Container>

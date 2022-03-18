@@ -2,11 +2,11 @@ import React from 'react';
 import './App.css';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
-import Header from './components/Header/Header';
-import Home from './pages/Home/Home';
-import Video from './pages/Video/Video';
+import Header from './components/Header';
+import Home from './pages/Home';
+import Video from './pages/Video';
 import S_Video from './pages/S_Video';
-import Search from './pages/Search/Search';
+import Search from './pages/Search';
 
 const App = () => {
   return (

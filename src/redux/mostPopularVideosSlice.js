@@ -12,7 +12,7 @@ export const fetchVideoData = createAsyncThunk(
   'mostPopularVideos/fetchVideoData',
   async () => {
     return await axios.get(
-      `https://youtube.googleapis.com/youtube/v3/videos?part=snippet%2CcontentDetails%2Cstatistics&chart=mostPopular&maxResults=5&regionCode=KR&key=${KEY}`,
+      `https://youtube.googleapis.com/youtube/v3/videos?part=snippet%2CcontentDetails%2Cstatistics&chart=mostPopular&maxResults=10&regionCode=KR&key=${KEY}`,
       { method: 'GET', redirect: 'follow' }
     );
   }

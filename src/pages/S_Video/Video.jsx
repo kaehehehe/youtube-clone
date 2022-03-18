@@ -17,7 +17,7 @@ import * as S from './style';
 
 const KEY = process.env.REACT_APP_YOUTUBE_API_KEY;
 
-const S_Video = () => {
+const Video = () => {
   const { videos } = useSelector((state) => state.searchVideos);
   const [video, setVideo] = useState(null);
   const [channel, setChannel] = useState();
@@ -110,4 +110,4 @@ const S_Video = () => {
   );
 };
 
-export default S_Video;
+export default Video;

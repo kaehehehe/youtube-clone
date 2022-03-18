@@ -18,9 +18,9 @@ const MostPopularVideo = ({ video }) => {
   const navigate = useNavigate();
   const [channel, setChannel] = useState();
 
+
   useEffect(() => {
     const thumbnailHeight = heightRef.current && heightRef.current.height;
-    console.log(thumbnailHeight);
     setThumbnailHeight(thumbnailHeight);
   }, [width, height]);
 
