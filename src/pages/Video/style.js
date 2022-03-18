@@ -11,7 +11,6 @@ export const Container = styled.div`
 `;
 
 export const Video = styled.iframe`
-  margin-top: 70px;
   width: 100%;
   height: 500px;
 `;
