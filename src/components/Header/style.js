@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const Header = styled.header`
-  width: 100vw;
+  width: 100%;
   height: 56px;
   background-color: var(--back-color);
   color: var(--white-color);
@@ -9,9 +9,10 @@ export const Header = styled.header`
   justify-content: space-between;
   align-items: center;
   border-bottom: 1px solid var(--light-black-color);
-  position: fixed;
+  position: sticky;
   top: 0;
   z-index: 90;
+  margin-bottom: 20px;
 `;
 
 export const LeftSide = styled.div`
