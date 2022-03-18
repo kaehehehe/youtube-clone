@@ -21,7 +21,7 @@
 }
 
 body {
-  background-color: var(--dark-black-color);
+  background-color: var(--back-color);
 }
 
 ul,

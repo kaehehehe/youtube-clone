@@ -5,7 +5,7 @@ export const Video = styled.li`
   cursor: pointer;
 
   &:hover {
-    transform: scale(1.05);
+    transform: scale(1.02);
   }
 `;
 

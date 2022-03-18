@@ -12,7 +12,6 @@ export const Header = styled.header`
   position: sticky;
   top: 0;
   z-index: 90;
-  margin-bottom: 20px;
 `;
 
 export const LeftSide = styled.div`
@@ -25,7 +24,7 @@ export const HamburgerMenu = styled.div`
   color: var(--white-color);
   font-size: 24px;
   height: 24px;
-  margin: 0 20px;
+  margin: 0 28px;
   cursor: pointer;
 `;
 
