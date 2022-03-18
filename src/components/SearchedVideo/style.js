@@ -2,9 +2,9 @@ import styled from 'styled-components';
 
 export const Video = styled.li`
   display: flex;
-  width: 70%;
+  width: 100%;
   margin: 5px 0;
-  transition: all 250ms ease-in;
+  transition: all 300ms linear;
   cursor: pointer;
 
   &:hover {

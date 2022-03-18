@@ -1,13 +1,17 @@
 import styled from 'styled-components';
 
-export const Container = styled.ul`
-  background-color: var(--dark-black-color);
-  text-align: start;
-  margin-left: 10px;
-  margin-right: 30px;
+export const Container = styled.div`
   display: flex;
+`;
+
+export const Videos = styled.ul`
+  display: flex;
+  width: 100%;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding-bottom: 30px;
-`
+  background-color: var(--dark-black-color);
+  text-align: start;
+  padding: 20px;
+  margin-left: 80px;
+`;
