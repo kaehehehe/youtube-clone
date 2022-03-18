@@ -12,7 +12,7 @@ export const fetchSearchData = createAsyncThunk(
   'search/fetchSearchData',
   async (keyword) => {
     return await axios.get(
-      `https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=5&q=${keyword}&type=video&key=${KEY}`,
+      `https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=20&q=${keyword}&type=video&key=${KEY}`,
       { method: 'GET', redirect: 'follow' }
     );
   }
