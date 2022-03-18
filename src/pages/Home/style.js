@@ -7,7 +7,6 @@ export const Container = styled.div`
 export const Videos = styled.ul`
   background-color: var(--dark-black-color);
   width: 100%;
-  height: 100vh;
   text-align: start;
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));

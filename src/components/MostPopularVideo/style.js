@@ -57,9 +57,6 @@ export const VideoMetadata = styled.div`
   .channel-name {
     margin-top: 5px;
   }
-
-  .published-at {
-  }
 `;
 
 export const MetadataWrapper = styled.div`
