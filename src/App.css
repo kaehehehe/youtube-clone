@@ -24,6 +24,10 @@ body {
   background-color: var(--back-color);
 }
 
+body.no-scroll {
+  overflow-y: hidden;
+}
+
 ul,
 li {
   list-style: none;

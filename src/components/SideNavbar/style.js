@@ -1,5 +1,14 @@
 import styled from 'styled-components';
 
+export const Background = styled.div`
+  width: 100vw;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 99;
+  position: fixed;
+  top: 0;
+`;
+
 export const Navbar = styled.nav`
   background-color: var(--back-color);
   width: 240px;

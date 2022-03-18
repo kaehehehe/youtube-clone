@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import './App.css';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
@@ -12,6 +12,16 @@ import { SideNavbarPortals } from './components/SideNavbar/SideNavbarPortals';
 
 const App = () => {
   const [showNavbar, setShowSideNavbar] = useState(false);
+
+  useEffect(() => {
+    const body = document.querySelector('body');
+    if (showNavbar) {
+      body.classList.add('no-scroll');
+    } else {
+      body.classList.remove('no-scroll');
+    }
+  }, [showNavbar]);
+  
   return (
     <>
       <Router basename={process.env.PUBLIC_URL}>
