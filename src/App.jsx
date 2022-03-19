@@ -4,8 +4,8 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 import Header from './components/Header';
 import Home from './pages/Home';
-import Video from './pages/Video';
-import S_Video from './pages/S_Video';
+import PopularVideoDetails from './pages/VideoDetails/PopularVideoDetails';
+import SearchedVideoDetails from './pages/VideoDetails/SearchedVideoDetails';
 import Search from './pages/Search';
 import SideNavbar from './components/SideNavbar';
 import { SideNavbarPortals } from './components/SideNavbar/SideNavbarPortals';
@@ -34,8 +34,8 @@ const App = () => {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/search" element={<Search />} />
-          <Route path="/search/video/:id" element={<S_Video />} />
-          <Route path="/video/:id" element={<Video />} />
+          <Route path="/search/video/:id" element={<SearchedVideoDetails />} />
+          <Route path="/video/:id" element={<PopularVideoDetails />} />
         </Routes>
       </Router>
     </>

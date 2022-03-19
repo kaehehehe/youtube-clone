@@ -12,13 +12,13 @@ import { useParams } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import axios from 'axios';
 
-import { convertDataIntoMonthDayYear } from '../../utils/convertDataIntoMonthDayYear';
-import { convertDataIntoNumberUsingUnits } from '../../utils/convertDataIntoNumberUsingUnits';
+import { convertDataIntoMonthDayYear } from '../../../utils/convertDataIntoMonthDayYear';
+import { convertDataIntoNumberUsingUnits } from '../../../utils/convertDataIntoNumberUsingUnits';
 import * as S from './style';
 
 const KEY = process.env.REACT_APP_YOUTUBE_API_KEY;
 
-const Video = () => {
+const PopularVideoDetails = () => {
   const { videos } = useSelector((state) => state.mostPopularVideos);
   const [video, setVideo] = useState(null);
   const [channel, setChannel] = useState();
@@ -121,4 +121,4 @@ const Video = () => {
   );
 };
 
-export default Video;
+export default PopularVideoDetails;
