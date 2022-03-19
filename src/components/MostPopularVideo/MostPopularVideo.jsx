@@ -11,19 +11,17 @@ import { convertDataIntoNumberUsingUnits } from '../../utils/convertDataIntoNumb
 
 const KEY = process.env.REACT_APP_YOUTUBE_API_KEY;
 
-const MostPopularVideo = ({ video }) => {
+const MostPopularVideo = React.forwardRef(({ video }, ref) => {
   const heightRef = useRef();
   const { width, height } = useWindowSize(null);
   const [thumbnailHeight, setThumbnailHeight] = useState(null);
   const navigate = useNavigate();
   const [channel, setChannel] = useState();
 
-
   useEffect(() => {
     const thumbnailHeight = heightRef.current && heightRef.current.height;
     setThumbnailHeight(thumbnailHeight);
   }, [width, height]);
-
 
   const fetchChannelData = async (channelId) => {
     return await axios.get(
@@ -46,7 +44,7 @@ const MostPopularVideo = ({ video }) => {
   return (
     <>
       {channel && (
-        <S.Video onClick={handleClickVideo}>
+        <S.Video onClick={handleClickVideo} ref={ref}>
           <S.ThumbnailWrapper>
             <S.Thumbnail
               src={video.snippet.thumbnails.medium.url}
@@ -77,6 +75,6 @@ const MostPopularVideo = ({ video }) => {
       )}
     </>
   );
-};
+});
 
 export default MostPopularVideo;
